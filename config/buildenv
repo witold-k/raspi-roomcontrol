@@ -1,0 +1,10 @@
+#------------------------------------------------------------------------------
+
+SENV_CRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
+
+SRC_DIR=$(readlink -f "$SCRIPT_DIR/..")
+PROD_BASE=$($SRC_DIR/scripts/productdir.sh)
+
+#------------------------------------------------------------------------------
+
+BUILD_TARGET=native

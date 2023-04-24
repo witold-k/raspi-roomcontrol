@@ -1,0 +1,3 @@
+apt:
+    libuv1-dev
+    libgtest-dev

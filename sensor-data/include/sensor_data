@@ -1,0 +1,13 @@
+#ifndef _sensor_data_
+#define _sensor_data_
+
+
+#include "../src/DataSet.hpp"
+#include "../src/DataSetHistory.hpp"
+#include "../src/Fixed.hpp"
+#include "../src/Time.hpp"
+#include "../src/UInt32.hpp"
+#include "../src/UInt64.hpp"
+
+
+#endif // _sensor_data_

@@ -1,0 +1,16 @@
+[Unit]
+Description=Reverse SSH tunnel
+After=network.target sound.target
+
+[Service]
+EnvironmentFile=
+ExecStart=autossh -N -o ServerAliveInterval=30 -o ServerAliveCountMax=3 -o UserKnownHostsFile=/home/pi/.ssh/known_hosts -i /home/pi/.ssh/id_rsa -R 19998:localhost:22 witold@vsrv82380.customer.xenway.de
+Restart=always
+RestartSec=60
+
+
+# disallow writing to /usr, /bin, /sbin, ...
+ProtectSystem=yes
+
+[Install]
+WantedBy=multi-user.target

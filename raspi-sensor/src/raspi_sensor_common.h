@@ -1,0 +1,75 @@
+#ifndef _raspi_sensor_common_h_
+#define _raspi_sensor_common_h_
+
+
+#if defined(_COMP_MSVC_) || defined(_COMP_MINGW_)
+#ifndef RASPI_SENSOR_API_IMPORT
+#define RASPI_SENSOR_API_IMPORT __declspec(dllimport)
+#endif
+#ifndef RASPI_SENSOR_CLASS_API_IMPORT
+#define RASPI_SENSOR_CLASS_API_IMPORT RASPI_SENSOR_API_IMPORT
+#endif
+#ifndef RASPI_SENSOR_VAR_VAR_IMPORT
+#define RASPI_SENSOR_VAR_VAR_IMPORT RASPI_SENSOR_API_IMPORT extern
+#endif
+#ifndef RASPI_SENSOR_API_EXPORT
+#define RASPI_SENSOR_API_EXPORT __declspec(dllexport)
+#endif
+#ifndef RASPI_SENSOR_CLASS_API_EXPORT
+#define RASPI_SENSOR_CLASS_API_EXPORT RASPI_SENSOR_API_EXPORT
+#endif
+#ifndef RASPI_SENSOR_VAR_API_EXPORT
+#define RASPI_SENSOR_VAR_API_EXPORT RASPI_SENSOR_API_EXPORT extern
+#endif
+#ifndef RASPI_SENSOR_API_PRIVATE
+#define RASPI_SENSOR_API_PRIVATE extern
+#endif
+#ifndef RASPI_SENSOR_CLASS_API_PRIVATE
+#define RASPI_SENSOR_CLASS_API_PRIVATE
+#endif
+#endif
+
+
+#if defined(_COMP_GCC_) || defined(_COMP_CLANG_)
+#ifndef RASPI_SENSOR_API_IMPORT
+#define RASPI_SENSOR_API_IMPORT __attribute__((visibility("default")))
+#endif
+#ifndef RASPI_SENSOR_CLASS_API_IMPORT
+#define RASPI_SENSOR_CLASS_API_IMPORT RASPI_SENSOR_API_IMPORT
+#endif
+#ifndef RASPI_SENSOR_VAR_API_IMPORT
+#define RASPI_SENSOR_VAR_API_IMPORT RASPI_SENSOR_API_IMPORT extern
+#endif
+#ifndef RASPI_SENSOR_API_EXPORT
+#define RASPI_SENSOR_API_EXPORT __attribute__((visibility("default")))
+#endif
+#ifndef RASPI_SENSOR_CLASS_API_EXPORT
+#define RASPI_SENSOR_CLASS_API_EXPORT RASPI_SENSOR_API_EXPORT
+#endif
+#ifndef RASPI_SENSOR_VAR_API_EXPORT
+#define RASPI_SENSOR_VAR_API_EXPORT RASPI_SENSOR_API_EXPORT extern
+#endif
+#ifndef RASPI_SENSOR_API_PRIVATE
+#define RASPI_SENSOR_API_PRIVATE extern
+#endif
+#ifndef RASPI_SENSOR_CLASS_API_PRIVATE
+#define RASPI_SENSOR_CLASS_API_PRIVATE __attribute__((visibility("hidden")))
+#endif
+#ifndef RASPI_SENSOR_VAR_API_PRIVATE
+#define RASPI_SENSOR_VAR_API_PRIVATE __attribute__((visibility("hidden")))
+#endif
+#endif
+
+
+#ifndef RASPI_SENSOR_API
+#define RASPI_SENSOR_API RASPI_SENSOR_API_IMPORT
+#endif
+#ifndef RASPI_SENSOR_CLASS_API
+#define RASPI_SENSOR_CLASS_API RASPI_SENSOR_CLASS_API_IMPORT
+#endif
+#ifndef RASPI_SENSOR_VAR_API
+#define RASPI_SENSOR_VAR_API RASPI_SENSOR_VAR_API_IMPORT
+#endif
+
+
+#endif // _raspi_sensor_common_h_
